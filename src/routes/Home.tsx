@@ -1,5 +1,6 @@
 import React, { useRef, createRef, useCallback, useEffect } from "react";
-import { useImmer, useMountedState } from "@fcc/hooks";
+import { useImmer } from "../hooks/useImmer";
+import { useMountedState } from "../hooks/useMountedState";
 import { atomWithImmer, useImmerAtom } from "jotai/immer";
 import Child from "../components/Child";
 const manageAtomObj = atomWithImmer({ num: 1 });

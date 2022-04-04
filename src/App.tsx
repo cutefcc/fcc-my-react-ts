@@ -4,7 +4,7 @@ import "./App.css";
 import Home from "./routes/Home";
 // import { useImmer } from "./hooks/useImmer";
 // import produce from "immer";
-import { useImmer, useMountedState } from "@fcc/hooks";
+// import { useImmer, useMountedState } from "@fcc/hooks";
 // import { useMountedState } from "@fcc/hooks";
 import { atomWithImmer, useImmerAtom } from "jotai/immer";
 const manageAtomObj = atomWithImmer({ num: 1 });
