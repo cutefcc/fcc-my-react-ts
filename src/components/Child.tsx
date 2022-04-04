@@ -10,7 +10,7 @@ function Child(props: any) {
   const [kv, setKv] = useImmer({v: '111'});
   useEffect(() => {}, []);
   const handleFetch = () => {
-    fetch("http://127.0.0.1:8787/api")
+    fetch("https:/my-app.cutefcc.workers.dev/api")
       .then((response) => {
         console.log("response", response);
         return response.json();
@@ -25,7 +25,7 @@ function Child(props: any) {
       });
   };
   const handleFetchKV = () => {
-    fetch("http://127.0.0.1:8787/api/KV-get-data")
+    fetch("https:/my-app.cutefcc.workers.dev/api/KV-get-data")
       .then((response) => {
         return response.json();
       })
@@ -40,7 +40,7 @@ function Child(props: any) {
       });
   };
   const handleSetKV = () => {
-    fetch("http://127.0.0.1:8787/api/KV-set-data?a=a2&b=b2")
+    fetch("https:/my-app.cutefcc.workers.dev/api/KV-set-data?a=a2&b=b2")
       .then((response) => response.text())
       .then((res) => {
         console.log("res", res);
