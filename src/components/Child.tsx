@@ -25,7 +25,7 @@ function Child(props: any) {
       });
   };
   const handleFetchKV = () => {
-    fetch("api/KV-get-data")
+    fetch("https://my-app.cutefcc.workers.dev/api/KV-get-data")
       .then((response) => {
         return response.json();
       })
