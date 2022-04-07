@@ -2,6 +2,7 @@ import React, { useRef, createRef, useCallback, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./routes/Home";
+import Xtate from "./routes/Xtate";
 // import { useImmer } from "./hooks/useImmer";
 // import produce from "immer";
 // import { useImmer, useMountedState } from "@fcc/hooks";
@@ -14,6 +15,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/xstate" element={<Xtate />} />
       </Routes>
     </BrowserRouter>
   );
