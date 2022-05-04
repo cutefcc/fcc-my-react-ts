@@ -1,7 +1,7 @@
 import { createMachine } from "xstate";
 
 export const machine =
-  /** @xstate-layout N4IgpgJg5mDOIC5QQPZQHQENYBsxgAcBiAd0wGs4BaAVwMVAJVgEsAXFlAOwZAA9EVAEwAOdABYAbFKEB2AJyyArCJGyRQoQBoQAT0Tj56OQAYAjELMiTp2QGZJSgL5OdqDNjyEiAMxQoIKhwaACcwXiZWDm5eAQQqCxN0ETshSSElDPk0lJEdfXjE9DMzSRN5cUNMk2lxFzc0LDJKX0wcHFgqT3x6JBBI9k4ePriLO2NLcTlJESVxJTsRSXzBIQcJeTKNWTXs+RNnepAuALhedyxcHojmQZiRwTsTMSkSuyUrGYPZlfjU9FkskkChShnkS3EsiOF0wzXCfQG0WGoFGC2Si3EJhqBymSkcvymEkxwIh0hSc2haBuUSGsUe-1eZnen2sKiUvyoTyMUlkUxqQhqFUkLhcQA */
+  /** @xstate-layout N4IgpgJg5mDOIC5QQPZQHQENYBsxgAcBiAd0wGs4BaAVwMVAJVgEsAXFlAOwZAA9EVAEwAOdABYAbFKEB2AJyyArCJGyRQoQBoQAT0Tj56OQAYAjELMiTp2QGZJSgL5OdqDNjyEiAMxQoIKhwaACcwXiZWDm5eAQQqCxN0ETshSSElDPk0lJEdfXjE9DMzSRN5cUNMk2lxFzc0LDJKX0wcHFgqT3x6JBBI9k4ePriLO2NLcTlJESVxJTsRSXzBIQcJeTKNWTXs+RNnepAuALhedyxcHojmQZiRwTsTMSkSuyUrGYPZlfjU9FkskkChShnkS3EsiOF0wzXCfQG0WGoFGC2Si3EJhqBymSkcvymEkxwIh0hSc2haBuUSGsUe-1eZnen2sKiUvyoTyM4iWFU0GW+8kOLiAA */
   createMachine(
     {
       id: "dog",
@@ -20,8 +20,8 @@ export const machine =
           },
         },
         awake: {
-          entry: ["awake entry"],
-          exit: ["awake out"],
+          entry: "awake entry",
+          exit: "awake out",
           on: {
             "falls-asleep": {
               actions: "go asleep",

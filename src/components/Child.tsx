@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { setConstantValue } from "typescript";
 import { useImmer } from "../hooks/useImmer";
 // import { useAtom } from "jotai";
 // import { numAtom } from "./store";
@@ -7,7 +8,12 @@ function Child(props: any) {
   // console.log("子组件渲染了", props);
   // const [num, setNum] = useAtom(numAtom);
   const [data, setData] = useImmer({ apiData: { pathname: "" } });
-  const [kv, setKv] = useImmer({v: '111'});
+  const [kv, setKv] = useImmer([1, 2, 3]);
+  // const [state, setA] = useImmer({
+  //   a1: {},// dd
+  //   b1: {},// dd
+  //   c:
+  // });
   useEffect(() => {}, []);
   const handleFetch = () => {
     fetch("https://my-app.cutefcc.workers.dev/api")
@@ -24,15 +30,16 @@ function Child(props: any) {
         console.log("err", err);
       });
   };
+
   const handleFetchKV = () => {
     fetch("https://my-app.cutefcc.workers.dev/api/KV-get-data")
       .then((response) => {
         return response.json();
       })
       .then((res) => {
-        console.log("res", res);
         setKv((draft) => {
-          draft.v = res;
+          // draft.splice(0, 1)
+          return [4, 5, 6];
         });
       })
       .catch((err) => {
@@ -57,7 +64,7 @@ function Child(props: any) {
       <br />
       fetch cloudfire data: {data.apiData.pathname}
       <br />
-      fetch kv data: {kv.v}
+      fetch kv data: {kv.toString()}
       <br />
       <button onClick={handleSetKV}>set KV</button>
     </div>
