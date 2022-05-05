@@ -2,6 +2,7 @@
   "name": "my-app-ts",
   "version": "0.1.0",
   "private": true,
+  "main": "./src/index.tsx",
   "dependencies": {
     "@craco/craco": "^6.4.3",
     "@testing-library/jest-dom": "^5.16.2",
@@ -48,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "@type-challenges/utils": "^0.1.1",
     "@welldone-software/why-did-you-render": "^6.2.3"
   }
 }
