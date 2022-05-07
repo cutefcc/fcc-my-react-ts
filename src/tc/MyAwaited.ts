@@ -17,7 +17,11 @@ import type { Equal, Expect } from "@type-challenges/utils";
 
 /* _____________ 你的代码 _____________ */
 
-type MyAwaited<T> = T extends Promise<infer K> ? K : never;
+type MyAwaited<T extends Promise<any>> = T extends Promise<infer K>
+  ? K extends Promise<any>
+    ? MyAwaited<K>
+    : K
+  : never;
 
 /* _____________ 测试用例 _____________ */
 
