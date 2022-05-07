@@ -4,8 +4,9 @@ interface Aa {
 }
 
 type k = keyof Aa; // 遍历某种类型的属性 用于获取某种类型的所有键，其返回类型是联合类型。
-const b: Pick<Aa, "name"> = {
+const b: Pick<Aa, "name" | "age"> = {
   name: "4334",
+  age: 18,
 };
 type MyPixck<T, K extends keyof T> = {
   [P in K]: T[P];
