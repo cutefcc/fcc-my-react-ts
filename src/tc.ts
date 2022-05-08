@@ -20,9 +20,6 @@ type MyReadOnly<T> = {
 //   [P in T[number]]: P;
 // };
 // 可选
-type MyPartial<T> = {
-  [P in keyof T]?: T[P];
-};
 // 必须
 type MyRequired<T> = {
   [P in keyof T]-?: T[P];
