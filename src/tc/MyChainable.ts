@@ -41,15 +41,30 @@ import { ValueFromStateGetter } from "xstate/lib/match";
 
 /* _____________ 你的代码 _____________ */
 
-type Chainable = {
-  option(
-    key: string,
-    value: any
-  ): {
-    option(key: string, value: any): Chainable;
-    get(): { [key: string]: any };
-  };
-  get(): any;
+// type Chainable = {
+//   option(
+//     key: string,
+//     value: any
+//   ): {
+//     option(key: string, value: any): Chainable;
+//     get(): { [key: string]: any };
+//   };
+//   get(): any;
+// };
+// type Chainable<T extends object = {}> = {
+//   option<K extends string = string, V = any>(
+//     key: K extends keyof T ? never : K,
+//     value: V
+//   ): Chainable<T & { [P in K]: V }>;
+//   get(): T;
+//   [key: string]: any;
+// };
+type Chainable<T = {}> = {
+  option<Key extends string, Value>(
+    key: Key extends keyof T ? never : Key,
+    value: Value
+  ): Chainable<T & Record<Key, Value>>;
+  get(): T;
 };
 
 /* _____________ 测试用例 _____________ */
