@@ -27,11 +27,12 @@ import type { Equal, Expect } from "@type-challenges/utils";
 
 /* _____________ 你的代码 _____________ */
 
-type MyLast<T extends any[]> = T["length"] extends 1
-  ? T[0]
-  : T extends [infer K, ...infer U]
-  ? MyLast<U>
-  : never;
+// type MyLast<T extends any[]> = T["length"] extends 1
+//   ? T[0]
+//   : T extends [infer K, ...infer U]
+//   ? MyLast<U>
+//   : never;
+type MyLast<T extends any[]> = T extends [...infer U, infer S] ? S : never;
 
 /* _____________ 测试用例 _____________ */
 
