@@ -9,7 +9,7 @@ import type { Equal, Expect } from "@type-challenges/utils";
   > 由谷歌自动翻译，欢迎 PR 改进翻译质量。
   
   >在此挑战中建议使用TypeScript 4.0
-  
+
   实现一个通用`Last<T>`，它接受一个数组`T`并返回其最后一个元素的类型。
   
   例如
@@ -40,7 +40,8 @@ type cases = [
   Expect<Equal<MyLast<[3, 2, 1]>, 1>>,
   Expect<Equal<MyLast<[() => 123, { a: string }]>, { a: string }>>
 ];
-
+if (a === b) {
+}
 /* _____________ 下一步 _____________ */
 /*
   > 分享你的解答：https://tsch.js.org/15/answer/zh-CN

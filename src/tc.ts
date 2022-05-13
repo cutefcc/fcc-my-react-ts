@@ -34,5 +34,4 @@ const p: Required<A1> = {
   age: 18,
   height: 1,
 };
-
 export { p };
